@@ -3,15 +3,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>SY Limpiezas al Detalle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Parisienne&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style/style.css">
   <link rel="icon" type="image/png" href="img/limpio.PNG">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- ===== METADATOS SEO ===== -->
-<title>SY Limpiezas | Limpieza profesional y detallada</title>
+   <title>SY Limpiezas al Detalle</title>
 <meta name="description" content="Servicios de limpieza profesional: alquileres, hogar y pisos turísticos. Cada rincón cuenta una historia, y nosotros lo dejamos impecable.">
-<meta name="keywords" content="limpieza, hogar, alquileres, pisos turísticos, Huesca, SY Limpiezas">
 <meta name="author" content="SY Limpiezas">
 <meta name="robots" content="index, follow">
 
@@ -29,73 +29,45 @@
 <meta name="twitter:image" content="https://tudominio.com/img/meta/preview.jpg"> <!-- cambia por tu URL real -->
 
 
+
 </head>
-
-<!-- Banner de cookies -->
-<div id="cookie-banner" style="position:fixed;left:0;right:0;bottom:0;background:#222;color:#fff;padding:10px 14px;display:none;z-index:9999;font-size:.9rem">
-  <span>
-    Usamos cookies técnicas para el funcionamiento del sitio. 
-    <a href="cookies.html" style="color:#ffd27a;text-decoration:underline">Más info</a>
-  </span>
-  <button id="cookie-accept" style="margin-left:10px;background:#ffd27a;border:none;padding:6px 10px;border-radius:6px;cursor:pointer">
-    Aceptar
-  </button>
-</div>
-
-<script>
-  (function(){
-    var k = 'sy_cookie_ok';
-    if(!localStorage.getItem(k)){
-      var b = document.getElementById('cookie-banner');
-      var a = document.getElementById('cookie-accept');
-      b.style.display='flex'; 
-      b.style.justifyContent='space-between'; 
-      b.style.alignItems='center';
-      a.onclick=function(){ 
-        localStorage.setItem(k,'1'); 
-        b.remove(); 
-      };
-    }
-  })();
-</script>
 
 <body>
 <header class="site-header">
   <div class="header-overlay">
-  <img src="img/logosf.png" alt="Logo SY" class="logo">
-  <span class="header-phrase">Cada rincón cuenta una historia</span>
-
-  <!-- Botón hamburguesa (móvil) -->
-  <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</div>
-
-  <nav class="main-nav">
-    <ul>
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#antes-despues">Antes / Después</a></li>
-      <li><a href="#consejos">Consejos</a></li>
-      <li><a href="#opiniones">Opiniones</a></li>
-      <li><a href="#confianza">Confianza</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
+    <img src="img/logosf.png" alt="Logo SY" class="logo">
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
+
+<!-- NUEVO: frase bajo el header, fuera de la imagen -->
+<div class="subheader-phrase">Cada rincón cuenta una historia</div>
+
+<!-- El menú, fuera del header (debajo de la frase) -->
+<nav class="main-nav">
+  <ul>
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#antes-despues">Antes / Después</a></li>
+    <li><a href="#consejos">Consejos</a></li>
+    <li><a href="#opiniones">Opiniones</a></li>
+    <li><a href="#confianza">Confianza</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
 
    
 
 <section id="inicio" class="hero">
-    <h2>
-  Más que limpiar, transformamos tu espacio<br>
-  <span class="hero-sub">con confianza y cuidado</span>
-</h2>
+  <img src="img/velasplogo.png" alt="Velas con logo" class="hero-bg">
+  <h1>
+    Más que limpiar, transformamos tu espacio<br>
+    <span class="hero-sub">con confianza y cuidado</span>
+  </h1>
+</section>
 
-    
-    
-    
-  </section>
 
  <section id="servicios" class="services">
   <h3>Servicios</h3>
@@ -198,6 +170,7 @@
         </div>
         <p class="ba-caption">Galeria y cristales</p>
       </article>
+    </div>  
     <button class="ba-nav ba-next" aria-label="Siguiente">›</button>
   </div>
 </section>
@@ -537,6 +510,32 @@ document.querySelectorAll('.card').forEach(card => {
     </p>
   </div>
 </footer>
+<!-- Banner de cookies -->
+<div id="cookie-banner" style="position:fixed;left:0;right:0;bottom:0;background:#222;color:#fff;padding:10px 14px;display:none;z-index:9999;font-size:.9rem">
+  <span>
+    Usamos cookies técnicas para el funcionamiento del sitio. 
+    <a href="cookies.html" style="color:#ffd27a;text-decoration:underline">Más info</a>
+  </span>
+  <button id="cookie-accept" style="margin-left:10px;background:#ffd27a;border:none;padding:6px 10px;border-radius:6px;cursor:pointer">
+    Aceptar
+  </button>
+</div>
+<script>
+  (function(){
+    var k = 'sy_cookie_ok';
+    if(!localStorage.getItem(k)){
+      var b = document.getElementById('cookie-banner');
+      var a = document.getElementById('cookie-accept');
+      b.style.display='flex';
+      b.style.justifyContent='space-between';
+      b.style.alignItems='center';
+      a.onclick=function(){
+        localStorage.setItem(k,'1');
+        b.remove();
+      };
+    }
+  })();
+</script>
 
 
 </body>
