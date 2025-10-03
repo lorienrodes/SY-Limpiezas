@@ -1,13 +1,16 @@
 
 :root{
   --gold:#8C6A3D;
+    --header-h: 150px;  /* alto del header fijo */
+  --phrase-h: 60px;   /* alto de la frase (el que quieras) */
+  --header-h-scrolled: 110px;
 }
 
 /* ===== Base ===== */
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  padding-top: 150px; /* igual al alto del header fijo */
+  padding-top: calc(var(--header-h) + var(--phrase-h));
   font-family: Arial, sans-serif;
   background-image: url("../img/fondomosaico.png");
   background-size: cover;
@@ -32,10 +35,40 @@ body {
   /* Efecto scroll */
   transition: height .25s ease, box-shadow .25s ease;
 }
-.site-header.scrolled {
-  height: 110px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+
+.subheader-phrase{
+  position: fixed;
+  top: var(--header-h);
+  left: 0;                 
+  right: 0;                /* 👈 añade */
+  width: 100%; 
+  z-index: 999;
+  display: grid; place-items: center;
+  height: var(--phrase-h);
+  padding: 0 14px;
+  color: #000;
+  background-image:
+    linear-gradient(rgba(0,0,0,.40), rgba(0,0,0,.25)), /* opcional: mejora legibilidad */
+    url("../img/fondosub2.png");
+  background-size: cover;      /* recorta si hace falta */
+  background-position: center; /* centrada */
+  background-repeat: no-repeat;
+
+  /* caligráfica */
+  font-family: "Dancing Script", system-ui, -apple-system, Arial, sans-serif;
+  font-weight: 400;                 /* NO 800: más legible */
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  line-height: 1.1;
+
+  border-bottom: 1px solid rgba(0,0,0,.06);
 }
+
+ 
+/* Si prefieres otra: cambia solo la font-family 
+.subheader-phrase.is-vibes{     font-family: "Great Vibes", cursive;   font-weight: 400; }
+.subheader-phrase.is-parisienne{font-family: "Parisienne", cursive;    font-weight: 400; }*/
+
+.site-header.scrolled{ height: var(--header-h-scrolled); }
 
 /* Contenido del header */
 .header-overlay {
@@ -57,29 +90,6 @@ body {
 }
 
 
-.header-phrase {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 24px;              /* ajusta vertical a tu gusto */
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--gold);
-  text-shadow: 0 1px 2px rgba(0,0,0,.35);
-  white-space: nowrap;
-  z-index: 2;
-}
-
-/* ===== Menú (abajo + negro translúcido + blur) ===== */
-.main-nav {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.5);  /* negro translúcido que te gusta */
-  backdrop-filter: blur(8px);   /* efecto glass */
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.12);
-}
 .main-nav ul {
   display: flex;
   justify-content: center;
@@ -98,23 +108,6 @@ body {
   border-bottom: 2px solid var(--gold);
 }
 
-/* ===== Hero ===== */
-.hero {
-  margin-top: 40px;
-  padding: 70px 20px 80px;
-  text-align: center;
-}
-.hero h2 {
-  font-size: 2em;
-  line-height: 1.15;
-  margin: 0 0 10px;
-  color: #222;
-}
-.hero h2 .hero-sub {
-  font-size: 0.9em;     /* accesible y un poco más pequeña */
-  font-weight: 500;
-  color: #333;
-}
 
 /* ===== Secciones ===== */
 .services, .before-after, .testimonials, .trust, .opinion, .cta {
@@ -266,7 +259,7 @@ body {
 }
 
 /* ===== Anclas compensadas (header fijo) ===== */
-section { scroll-margin-top: 160px; }
+section{ scroll-margin-top: calc(var(--header-h) + var(--phrase-h) + 10px); }
 
 /* ===== Footer ===== */
 footer{
@@ -377,10 +370,6 @@ footer a:hover{ text-decoration: underline; }
   border-color: var(--gold);
 }
 
-.contact-card .icon{
-  width: 36px; height: 36px;
-  fill: #222;         /* icono relleno */
-}
 .contact-card .label{
   font-weight: 700;
   color: #111;
@@ -390,8 +379,6 @@ footer a:hover{ text-decoration: underline; }
   color: #333;
 }
 
-/* Alto contraste al pasar por el menú activo ya existente */
-.main-nav a.is-active { color: var(--gold); border-bottom: 2px solid var(--gold); }
 /* Iconos personalizados */
 .contact-card .icon{
   width: 36px; height: 36px;
@@ -533,4 +520,91 @@ footer a:hover{ text-decoration: underline; }
   height: auto;
   display: block;
   margin-bottom: .5rem;
+}
+
+/* Hero ajustado a imagen cuadrada 1:1 */
+/* --- HERO con imagen que define el alto --- */
+.hero{
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 0; padding: 0;
+  text-align: center; color: #fff;
+
+  /* 👇 Variables para mover y escalar el texto libremente */
+  --hero-x: 27%;   /* acepta % o px: ej. 40% o 220px */
+  --hero-y: 8%;   /* acepta % o px */
+  --hero-fs-min: 1.8rem;
+  --hero-fs-fluid: 3.8vw;
+  --hero-fs-max: 2rem;
+  --hero-weight: 400;      /* 400 = normal (menos negrita) */
+  --hero-sub-weight: 400;  /* si quieres, también 400 */
+}
+
+.hero-bg{
+  width: 100%;
+  height: auto;     /* mantiene la proporción real de la imagen */
+  display: block;
+}
+
+.hero h1{
+  position: absolute;
+  left: var(--hero-x);
+  top:  var(--hero-y);
+  transform: translate(-50%, -50%);  /* centra el ancla en ese punto */
+  margin: 0;
+  font-size: clamp(var(--hero-fs-min), var(--hero-fs-fluid), var(--hero-fs-max));
+  line-height: 1.15;
+  font-weight: var(--hero-weight);
+  /* opcional: suaviza un poco el borde y la sombra */
+  letter-spacing: .2px;
+  text-shadow: 0 1px 6px rgba(0,0,0,.18);
+   color: #000;
+}
+
+/* sub más fino */
+.hero h1 .hero-sub{
+  font-family: "Inter", system-ui, -apple-system, Arial, sans-serif;
+  font-weight: 300;
+  color: #000;
+  font-synthesis-weight: none; /* evita “falso bold” */
+}
+
+@media (max-width: 680px){
+  .hero{
+    --hero-x: 50%;
+    --hero-y: 60%;
+    --hero-fs-fluid: 5.2vw;
+  }
+}
+
+
+
+/* Cuando el header se reduce, la frase sube acorde */
+.site-header.scrolled + .subheader-phrase{
+  top: var(--header-h-scrolled);
+}
+
+/* Menú fuera de la imagen, pegado a la frase */
+.main-nav{
+  position: sticky;
+  top: calc(var(--header-h) + var(--phrase-h));
+  z-index: 998;
+  border-radius: 0;                 /* ya no hace falta redondeo */
+  background: #000 !important;
+}
+
+/* Ajusta el top del menú cuando el header está reducido */
+.site-header.scrolled + .subheader-phrase + .main-nav{
+  top: calc(var(--header-h-scrolled) + var(--phrase-h));
+}
+
+/* Como el menú ya no vive dentro del header, quita cosas absolutas antiguas */
+@media (max-width:900px){
+  .main-nav{
+    position: absolute;
+    top: calc(var(--header-h) + var(--phrase-h));
+    background: #000 !important;
+    /* resto igual */
+  }
 }
