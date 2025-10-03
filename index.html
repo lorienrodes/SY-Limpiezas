@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>SY Limpiezas al Detalle</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="icon" type="image/png" href="img/limpio.PNG">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- ===== METADATOS SEO ===== -->
+<title>SY Limpiezas | Limpieza profesional y detallada</title>
+<meta name="description" content="Servicios de limpieza profesional: alquileres, hogar y pisos turísticos. Cada rincón cuenta una historia, y nosotros lo dejamos impecable.">
+<meta name="keywords" content="limpieza, hogar, alquileres, pisos turísticos, Huesca, SY Limpiezas">
+<meta name="author" content="SY Limpiezas">
+<meta name="robots" content="index, follow">
+
+<!-- ===== OPEN GRAPH (para Facebook, WhatsApp, LinkedIn) ===== -->
+<meta property="og:title" content="SY Limpiezas | Limpieza profesional y detallada">
+<meta property="og:description" content="Servicios de limpieza profesional en alquileres, hogar y pisos turísticos. Confianza y cuidado en cada espacio.">
+<meta property="og:image" content="https://tudominio.com/img/meta/preview.jpg"> <!-- cambia por tu URL real -->
+<meta property="og:url" content="https://tudominio.com/">
+<meta property="og:type" content="website">
+
+<!-- ===== TWITTER CARD ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SY Limpiezas | Limpieza profesional y detallada">
+<meta name="twitter:description" content="Servicios de limpieza profesional en alquileres, hogar y pisos turísticos.">
+<meta name="twitter:image" content="https://tudominio.com/img/meta/preview.jpg"> <!-- cambia por tu URL real -->
+
+
+</head>
+
+<!-- Banner de cookies -->
+<div id="cookie-banner" style="position:fixed;left:0;right:0;bottom:0;background:#222;color:#fff;padding:10px 14px;display:none;z-index:9999;font-size:.9rem">
+  <span>
+    Usamos cookies técnicas para el funcionamiento del sitio. 
+    <a href="cookies.html" style="color:#ffd27a;text-decoration:underline">Más info</a>
+  </span>
+  <button id="cookie-accept" style="margin-left:10px;background:#ffd27a;border:none;padding:6px 10px;border-radius:6px;cursor:pointer">
+    Aceptar
+  </button>
+</div>
+
+<script>
+  (function(){
+    var k = 'sy_cookie_ok';
+    if(!localStorage.getItem(k)){
+      var b = document.getElementById('cookie-banner');
+      var a = document.getElementById('cookie-accept');
+      b.style.display='flex'; 
+      b.style.justifyContent='space-between'; 
+      b.style.alignItems='center';
+      a.onclick=function(){ 
+        localStorage.setItem(k,'1'); 
+        b.remove(); 
+      };
+    }
+  })();
+</script>
+
+<body>
+<header class="site-header">
+  <div class="header-overlay">
+  <img src="img/logo.png" alt="Logo SY" class="logo">
+  <span class="header-phrase">Cada rincón cuenta una historia</span>
+
+  <!-- Botón hamburguesa (móvil) -->
+  <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#antes-despues">Antes / Después</a></li>
+      <li><a href="#consejos">Consejos</a></li>
+      <li><a href="#opiniones">Opiniones</a></li>
+      <li><a href="#confianza">Confianza</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+   
+
+<section id="inicio" class="hero">
+    <h2>
+  Más que limpiar, transformamos tu espacio<br>
+  <span class="hero-sub">con confianza y cuidado</span>
+</h2>
+
+    
+    
+    
+  </section>
+
+ <section id="servicios" class="services">
+  <h3>Servicios</h3>
+
+  <div class="card alquileres">
+    <div class="card-image"></div>
+    <div class="card-body">
+      <div class="card-title">Alquileres</div>
+      <div class="card-text">Limpiezas personalizadas antes y después de cada estancia.</div>
+    </div>
+  </div>
+
+  <div class="card hogar">
+    <div class="card-image"></div>
+    <div class="card-body">
+      <div class="card-title">Hogar</div>
+      <div class="card-text">Preparación impecable para compra-venta.</div>
+    </div>
+  </div>
+
+  <div class="card turismo">
+    <div class="card-image"></div>
+    <div class="card-body">
+      <div class="card-title">Turismo</div>
+      <div class="card-text">Pisos turísticos listos para cada huésped.</div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+   <section id="antes-despues" class="before-after">
+  <h3>Antes / Después</h3>
+
+  <div class="ba-carousel">
+    <button class="ba-nav ba-prev" aria-label="Anterior">‹</button>
+
+    <div class="ba-track" id="baTrack">
+      <!-- ITEM 1 -->
+      <article class="ba-item">
+        <div class="ba-wrap">
+          <img src="img/antes-despues/baño_antes.png" alt="Antes" class="ba-img ba-before">
+          <img src="img/antes-despues/baño_despues.png"  alt="Después" class="ba-img ba-after">
+          <input type="range" class="ba-slider" min="0" max="100" value="50" aria-label="Comparador antes/después">
+          <div class="ba-handle"><span class="ba-dot"></span></div>
+        </div>
+        <p class="ba-caption">Baño a fondo</p>
+      </article>
+
+      <!-- ITEM 2 -->
+      <article class="ba-item">
+        <div class="ba-wrap">
+          <img src="img/antes-despues/cocina_antes.png" alt="Antes" class="ba-img ba-before">
+          <img src="img/antes-despues/cocina_despues.png"  alt="Después" class="ba-img ba-after">
+          <input type="range" class="ba-slider" min="0" max="100" value="50" aria-label="Comparador antes/después">
+          <div class="ba-handle"><span class="ba-dot"></span></div>
+        </div>
+        <p class="ba-caption">Cocina a fondo</p>
+      </article>
+      <!-- ITEM 3 -->
+      <article class="ba-item">
+        <div class="ba-wrap">
+          <img src="img/antes-despues/horno_antes.png" alt="Antes" class="ba-img ba-before">
+          <img src="img/antes-despues/horno_despues.png"  alt="Después" class="ba-img ba-after">
+          <input type="range" class="ba-slider" min="0" max="100" value="50" aria-label="Comparador antes/después">
+          <div class="ba-handle"><span class="ba-dot"></span></div>
+        </div>
+        <p class="ba-caption">Limpieza de horno</p>
+      </article>
+      <!-- ITEM 4 -->
+      <article class="ba-item">
+        <div class="ba-wrap">
+          <img src="img/antes-despues/salon_antes.png" alt="Antes" class="ba-img ba-before">
+          <img src="img/antes-despues/salon_despues.png"  alt="Después" class="ba-img ba-after">
+          <input type="range" class="ba-slider" min="0" max="100" value="50" aria-label="Comparador antes/después">
+          <div class="ba-handle"><span class="ba-dot"></span></div>
+        </div>
+        <p class="ba-caption">Salón a fondo</p>
+      </article>
+      <!-- ITEM 5 -->
+      <article class="ba-item">
+        <div class="ba-wrap">
+          <img src="img/antes-despues/balcon_antes.png" alt="Antes" class="ba-img ba-before">
+          <img src="img/antes-despues/balcon_despues.png"  alt="Después" class="ba-img ba-after">
+          <input type="range" class="ba-slider" min="0" max="100" value="50" aria-label="Comparador antes/después">
+          <div class="ba-handle"><span class="ba-dot"></span></div>
+        </div>
+        <p class="ba-caption">Balcón a fondo</p>
+      </article>
+      <!-- ITEM 6 -->
+      <article class="ba-item">
+        <div class="ba-wrap">
+          <img src="img/antes-despues/galeria_antes.png" alt="Antes" class="ba-img ba-before">
+          <img src="img/antes-despues/galeria_despues.png"  alt="Después" class="ba-img ba-after">
+          <input type="range" class="ba-slider" min="0" max="100" value="50" aria-label="Comparador antes/después">
+          <div class="ba-handle"><span class="ba-dot"></span></div>
+        </div>
+        <p class="ba-caption">Galeria y cristales</p>
+      </article>
+    <button class="ba-nav ba-next" aria-label="Siguiente">›</button>
+  </div>
+</section>
+
+<section id="consejos" class="tips">
+  <h3>Consejos de limpieza</h3>
+
+  <div class="tips-carousel">
+    <button class="tips-nav tips-prev" aria-label="Anterior">‹</button>
+
+    <div class="tips-track" id="tipsTrack">
+      <!-- 1 -->
+      <article class="tip-card">
+        <div class="tip-emoji">🌿</div>
+        <h4>Vinagre contra la cal</h4>
+        <p>Aplicar, dejar actuar y aclarar. Respeta el metal.</p>
+      </article>
+
+      <!-- 2 -->
+      <article class="tip-card">
+        <div class="tip-emoji">🧽</div>
+        <h4>Cristales sin marcas</h4>
+        <p>Mejor en días nublados; evita sol directo.</p>
+      </article>
+
+      <!-- 3 -->
+      <article class="tip-card">
+        <div class="tip-emoji">🪣</div>
+        <h4>Suelos brillantes</h4>
+        <p>Una tapa en el cubo basta. No satures.</p>
+      </article>
+
+      <!-- 4 -->
+      <article class="tip-card">
+        <div class="tip-emoji">🕒</div>
+        <h4>Ventila 10 min</h4>
+        <p>Renueva el aire y reduce olores persistentes.</p>
+      </article>
+
+      <!-- 5 -->
+      <article class="tip-card">
+        <div class="tip-emoji">🧤</div>
+        <h4>Protege tus manos</h4>
+        <p>Usa guantes con químicos y lee etiquetas.</p>
+      </article>
+
+      <!-- 6 -->
+      <article class="tip-card">
+        <div class="tip-emoji">🛋️</div>
+        <h4>Sofás al día</h4>
+        <p>Aspira semanalmente para polvo y ácaros.</p>
+      </article>
+
+            <!-- 7 -->
+      <article class="tip-card">
+        <div class="tip-emoji">🐾</div>
+        <h4>Pelitos de mascota</h4>
+        <p>Guante de goma húmedo: recoge y despega fácil.</p>
+      </article>
+    </div>
+
+    <button class="tips-nav tips-next" aria-label="Siguiente">›</button>
+  </div>
+</section>
+
+
+
+  <section id="opiniones" class="opinion">
+    <h3>Opiniones</h3>
+    <blockquote>“Quedó impecable, nunca había visto mi casa así.”</blockquote>
+    <blockquote>“Gran profesionalidad y confianza.”</blockquote>
+  </section>
+
+  <section id="confianza" class="trust">
+    <h3>Confianza</h3>
+    <p>Cada cliente importa. Mi compromiso es que tu espacio brille como nuevo.</p>
+    <p>[Firma YS]</p>
+  </section>
+
+<section id="contacto" class="contact">
+  <h3>Contacto</h3>
+  <p class="contact-sub">Hablemos: rápida respuesta y total confianza.</p>
+
+  <ul class="contact-grid" aria-label="Vías de contacto">
+    <!-- Teléfono -->
+    <li>
+      <a class="contact-card" href="tel:+34900111222" aria-label="Llamar por teléfono">
+        <!-- Phone (filled) -->
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+          <path d="M6.62 10.79a15.464 15.464 0 006.59 6.59c.5.24 1.09.16 1.48-.23l1.94-1.94a1 1 0 011.01-.24l3.11 1.04a1 1 0 01.68.95v3.12a1 1 0 01-.88 1c-.52.06-1.05.09-1.58.09A17 17 0 013 5.5c0-.53.03-1.06.09-1.58A1 1 0 014.09 3h3.12a1 1 0 01.95.68l1.04 3.11a1 1 0 01-.24 1.01L7.02 9.31a1.25 1.25 0 00-.4 1.48z"/>
+        </svg>
+        <span class="label">Teléfono</span>
+        <span class="value">900 111 222</span>
+      </a>
+    </li>
+
+    <!-- WhatsApp -->
+    <li>
+      <a class="contact-card" href="https://wa.me/34600111222" target="_blank" rel="noopener" aria-label="Abrir chat de WhatsApp">
+        <!-- WhatsApp (filled) -->
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+          <path d="M12 2a9.9 9.9 0 00-8.48 15.18L2 22l4.96-1.48A9.9 9.9 0 1012 2zm5.74 14.3c-.23.65-1.34 1.24-1.86 1.32-.48.07-1.09.1-1.76-.11-.41-.13-.94-.3-1.63-.59-2.86-1.23-4.72-4.1-4.86-4.3-.14-.2-1.16-1.54-1.16-2.94s.73-2.08.99-2.37c.26-.29.57-.36.76-.36h.55c.18 0 .42-.07.65.49.23.56.78 1.94.85 2.08.07.14.11.3.02.49-.1.2-.15.32-.3.49-.15.17-.31.38-.44.51-.15.15-.31.31-.13.6.18.29.79 1.31 1.7 2.12 1.17 1.05 2.16 1.38 2.48 1.53.31.15.5.13.69-.08.19-.21.79-.92 1-1.24.21-.32.42-.27.69-.16.27.11 1.73.81 2.03.96.3.15.5.22.57.34.07.12.07.71-.16 1.36z"/>
+        </svg>
+        <span class="label">WhatsApp</span>
+        <span class="value">+34 600 111 222</span>
+      </a>
+    </li>
+
+    <!-- Email -->
+    <li>
+      <a class="contact-card" href="mailto:contacto@sylimpiar.es" aria-label="Enviar email">
+        <!-- Mail (filled) -->
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+          <path d="M20 4H4a2 2 0 00-2 2v.4l10 6.25L22 6.4V6a2 2 0 00-2-2zm0 4.2l-8 5-8-5V18a2 2 0 002 2h12a2 2 0 002-2V8.2z"/>
+        </svg>
+        <span class="label">Email</span>
+        <span class="value">contacto@sylimpiar.es</span>
+      </a>
+    </li>
+
+    <!-- Instagram -->
+    <li>
+  <a class="contact-card" href="https://instagram.com/sy_limpiezas" target="_blank" rel="noopener" aria-label="Abrir Instagram">
+    <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+      <defs>
+        <linearGradient id="igGradientContact" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stop-color="#feda75"/>
+          <stop offset="25%"  stop-color="#fa7e1e"/>
+          <stop offset="50%"  stop-color="#d62976"/>
+          <stop offset="75%"  stop-color="#962fbf"/>
+          <stop offset="100%" stop-color="#4f5bd5"/>
+        </linearGradient>
+      </defs>
+      <path fill="url(#igGradientContact)" d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm11 2a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10z"/>
+    </svg>
+    <span class="label">Instagram</span>
+    <span class="value">@sy_limpiezas</span>
+  </a>
+</li>
+
+  </ul>
+</section>
+
+  
+<script>
+/* Inicializa TODOS los comparadores .ba-wrap (slider interior) */
+(function initComparators(){
+  document.querySelectorAll('.ba-wrap').forEach(wrap => {
+    const slider = wrap.querySelector('.ba-slider');
+    const after  = wrap.querySelector('.ba-after');
+    const handle = wrap.querySelector('.ba-handle');
+    if (!slider || !after || !handle) return;
+
+    function setPos(v){
+  after.style.clipPath = `inset(0 0 0 ${v}%)`;  // ← recorte por la IZQUIERDA
+  handle.style.left = v + '%';
+  // Ajusta el aspect-ratio del contenedor a la proporción real de la imagen "antes"
+const imgRef = wrap.querySelector('.ba-before') || wrap.querySelector('img');
+function setWrapRatioFrom(img){
+  if (!img || !img.naturalWidth || !img.naturalHeight) return;
+  wrap.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
+}
+if (imgRef) {
+  if (imgRef.complete) {
+    setWrapRatioFrom(imgRef);
+  } else {
+    imgRef.addEventListener('load', () => setWrapRatioFrom(imgRef), { once:true });
+  }
+}
+
+}
+    setPos(slider.value);
+    slider.addEventListener('input', e => setPos(e.target.value));
+  });
+})();
+
+/* Carrusel: 2 visibles (desktop), avanza 1 item por flecha */
+(function initCarousel(){
+  const track = document.getElementById('baTrack');
+  const prev  = document.querySelector('.ba-prev');
+  const next  = document.querySelector('.ba-next');
+  if (!track || !prev || !next) return;
+
+  const styles = getComputedStyle(track);
+  function gap(){ return parseFloat(styles.gap) || 0; }
+
+  function itemWidth(){
+    const first = track.querySelector('.ba-item');
+    return first ? first.getBoundingClientRect().width + gap() : 0;
+  }
+
+  function snap(dir = 1){
+    track.scrollBy({ left: dir * itemWidth(), behavior: 'smooth' });
+    setTimeout(updateNav, 250);
+  }
+
+  function updateNav(){
+    const max = track.scrollWidth - track.clientWidth - 2;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max;
+  }
+
+  prev.addEventListener('click', () => snap(-1));
+  next.addEventListener('click', () => snap(1));
+  track.addEventListener('scroll', updateNav);
+  window.addEventListener('resize', updateNav);
+
+  updateNav();
+})();
+</script>
+
+<script>
+/* Carrusel de Consejos: 3 visibles en desktop, paso de 1 */
+(function initTips(){
+  const track = document.getElementById('tipsTrack');
+  const prev  = document.querySelector('.tips-prev');
+  const next  = document.querySelector('.tips-next');
+  if (!track || !prev || !next) return;
+
+  function gap(){ return parseFloat(getComputedStyle(track).gap) || 0; }
+  function itemWidth(){
+    const first = track.querySelector('.tip-card');
+    return first ? first.getBoundingClientRect().width + gap() : 0;
+  }
+  function snap(dir = 1){
+    track.scrollBy({ left: dir * itemWidth(), behavior: 'smooth' });
+    setTimeout(updateNav, 250);
+  }
+  function updateNav(){
+    const max = track.scrollWidth - track.clientWidth - 2;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max;
+  }
+
+  prev.addEventListener('click', () => snap(-1));
+  next.addEventListener('click', () => snap(1));
+  track.addEventListener('scroll', updateNav);
+  window.addEventListener('resize', updateNav);
+  updateNav();
+})();
+</script>
+<script>
+// Header reducido al hacer scroll
+(function(){
+  const header = document.querySelector('.site-header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 10);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive:true });
+})();
+</script>
+
+<script>
+// Hamburguesa (abre/cierra y cierra al hacer clic en un link)
+(function(){
+  const btn = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.main-nav');
+  const links = document.querySelectorAll('.main-nav a');
+  if(!btn || !nav) return;
+
+  btn.addEventListener('click', ()=>{
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  links.forEach(link => {
+    link.addEventListener('click', ()=>{
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    });
+  });
+})();
+</script>
+
+<script>
+// Resalta link activo por sección
+(function(){
+  const links = Array.from(document.querySelectorAll('.main-nav a'));
+  const map = new Map(links.map(a => [a.getAttribute('href'), a]));
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const id = '#' + e.target.id;
+        links.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 });
+
+  document.querySelectorAll('section[id]').forEach(sec => obs.observe(sec));
+})();
+</script>
+<script>
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', () => {
+    // cerrar todos
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('open'));
+    // abrir solo el que has pulsado
+    card.classList.add('open');
+  });
+});
+</script>
+
+
+
+
+
+ <footer class="footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="img/logo.png" alt="SY Limpiezas">
+      <p>Cada rincón cuenta una historia</p>
+    </div>
+
+    <nav class="footer-nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="footer-contact">
+      <p>📞 666 000 000</p>
+      <p>✉ info@sylimpezas.com</p>
+      <p>📍 Huesca, España</p>
+    </div>
+
+    <div class="footer-social">
+      <a href="#"><img src="img/icons/whatsapp.svg" alt="WhatsApp"></a>
+      <a href="#"><img src="img/icons/instagram.svg" alt="Instagram"></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 SY Limpiezas · Todos los derechos reservados</p>
+    <p>
+      <a href="legal.html">Aviso Legal</a> ·
+      <a href="privacidad.html">Política de Privacidad</a> ·
+      <a href="cookies.html">Política de Cookies</a>
+    </p>
+  </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,536 @@
+
+:root{
+  --gold:#8C6A3D;
+}
+
+/* ===== Base ===== */
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  padding-top: 150px; /* igual al alto del header fijo */
+  font-family: Arial, sans-serif;
+  background-image: url("../img/fondomosaico.png");
+  background-size: cover;
+  background-position: center top;
+  background-attachment: scroll;
+}
+
+/* ===== Header limpio ===== */
+.site-header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 1000;
+
+  /* Fondo del header */
+  background-image: url("../img/cama_redonda.png");
+  background-size: cover;          /* mantén 'cover' como en tu punto guardado */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Efecto scroll */
+  transition: height .25s ease, box-shadow .25s ease;
+}
+.site-header.scrolled {
+  height: 110px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+}
+
+/* Contenido del header */
+.header-overlay {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 10px 18px;
+}
+/* Logo del header: tamaño y posición manual */
+.logo {
+  height: 100px;         /* <-- cambia este valor para hacerlo más grande o pequeño */
+  width: auto;
+  display: block;
+
+  position: relative;
+  top: -30px;            /* <-- valor negativo lo sube, positivo lo baja */
+  left: 0;               /* <-- si algún día quieres moverlo lateralmente */
+}
+
+
+.header-phrase {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 24px;              /* ajusta vertical a tu gusto */
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--gold);
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+  white-space: nowrap;
+  z-index: 2;
+}
+
+/* ===== Menú (abajo + negro translúcido + blur) ===== */
+.main-nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.5);  /* negro translúcido que te gusta */
+  backdrop-filter: blur(8px);   /* efecto glass */
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+}
+.main-nav ul li { margin: 0 15px; }
+.main-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.main-nav a:hover {
+  color: var(--gold);
+  border-bottom: 2px solid var(--gold);
+}
+
+/* ===== Hero ===== */
+.hero {
+  margin-top: 40px;
+  padding: 70px 20px 80px;
+  text-align: center;
+}
+.hero h2 {
+  font-size: 2em;
+  line-height: 1.15;
+  margin: 0 0 10px;
+  color: #222;
+}
+.hero h2 .hero-sub {
+  font-size: 0.9em;     /* accesible y un poco más pequeña */
+  font-weight: 500;
+  color: #333;
+}
+
+/* ===== Secciones ===== */
+.services, .before-after, .testimonials, .trust, .opinion, .cta {
+  padding: 60px 20px;
+  text-align: center;
+}
+.card {
+  display: inline-block;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== Antes / Después ===== */
+.before-after .ba-wrap{
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+  background: #000;
+}
+.ba-img{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  user-select: none; pointer-events: none;
+  z-index: 1;
+}
+.ba-after{
+  clip-path: inset(0 0 0 50%);   /* ← recorta por la IZQUIERDA */
+  transition: clip-path .05s linear;
+}
+
+/* Slider funcional invisible */
+.ba-slider{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  appearance: none; -webkit-appearance: none; -moz-appearance: none;
+  background: transparent; outline: none; margin: 0;
+  cursor: ew-resize; z-index: 3; opacity: 0;
+}
+/* Handle visible (línea + círculo) */
+.ba-handle{
+  position: absolute; top: 0; bottom: 0; left: 50%;
+  transform: translateX(-50%); z-index: 4; pointer-events: none;
+}
+.ba-handle::before{
+  content: ""; position: absolute; top: 0; bottom: 0; left: 50%;
+  transform: translateX(-50%); width: 8px;
+  background: #ffffff; border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.2) inset;
+}
+.ba-dot{
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: #333; box-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+.ba-dot::before, .ba-dot::after{
+  content: "";
+  position: absolute; top: 50%; transform: translateY(-50%);
+  border: 7px solid transparent;
+}
+.ba-dot::before{ left: 6px;  border-right-color: #fff; }
+.ba-dot::after { right: 6px; border-left-color:  #fff; }
+
+/* Carrusel comparadores (2 visibles) */
+.before-after .ba-carousel{
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.before-after .ba-track{
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  grid-auto-columns: calc((100% - 1rem) / 2);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: .25rem 2.8rem;
+}
+.before-after .ba-item{ scroll-snap-align: start; }
+.before-after .ba-nav{
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 2.4rem; height: 2.4rem; border-radius: 50%;
+  border: 1px solid #ddd; background: #fff;
+  display: grid; place-items: center; cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08); z-index: 5;
+}
+.before-after .ba-prev{ left: .25rem; }
+.before-after .ba-next{ right: .25rem; }
+.before-after .ba-nav:disabled{ opacity: .4; cursor: not-allowed; }
+
+@media (max-width: 680px){
+  .before-after .ba-track{ grid-auto-columns: 100%; }
+}
+.ba-caption{
+  margin-top: .5rem;
+  font-size: .95rem;
+  color: #333;
+  text-align: center;
+}
+
+/* ===== Consejos (3 visibles) ===== */
+.tips { padding: 60px 20px; text-align: center; }
+.tips-carousel { position: relative; max-width: 1100px; margin: 0 auto; }
+.tips-track{
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  grid-auto-columns: calc((100% - 2rem) / 3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: .25rem 3rem;
+}
+.tip-card{
+  scroll-snap-align: start;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 18px 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+  text-align: left;
+}
+.tip-emoji{ font-size: 1.6rem; line-height: 1; }
+.tip-card h4{ margin: 8px 0 6px; font-size: 1.05rem; color: #222; }
+.tip-card p{ margin: 0; color: #444; font-size: .95rem; }
+
+.tips-nav{
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 2.4rem; height: 2.4rem; border-radius: 50%;
+  border: 1px solid #ddd; background: #fff;
+  display: grid; place-items: center; cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08); z-index: 5;
+}
+.tips-prev{ left: .25rem; }
+.tips-next{ right: .25rem; }
+.tips-nav:disabled{ opacity: .4; cursor: not-allowed; }
+
+@media (max-width: 680px){
+  .tips-track{ grid-auto-columns: 100%; }
+}
+
+/* ===== Anclas compensadas (header fijo) ===== */
+section { scroll-margin-top: 160px; }
+
+/* ===== Footer ===== */
+footer{
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px 16px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin-top: 40px;      /* separa del último bloque de contenido */
+}
+footer a{
+  color: var(--gold);    /* usa tu dorado */
+  text-decoration: none;
+  font-weight: 600;
+}
+footer a:hover{ text-decoration: underline; }
+
+
+.main-nav a.is-active {
+  color: var(--gold);
+  border-bottom: 2px solid var(--gold);
+}
+/* ===== Menú hamburguesa ===== */
+
+/* Botón hamburguesa: base (escritorio oculto) */
+.nav-toggle{
+  display: none;             /* se mostrará solo en móvil */
+  margin-left: auto;
+  width: 42px; height: 42px;
+  border: none; border-radius: 8px;
+  background: rgba(0,0,0,.5);
+  cursor: pointer;
+  z-index: 1002;
+}
+.nav-toggle span{
+  display: block;
+  width: 22px; height: 2px;
+  background: #fff;
+  margin: 6px auto;
+}
+
+@media (max-width: 900px){
+  .nav-toggle{ display: block; }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;         /* justo debajo del header */
+    left: 0; right: 0;
+    display: none;
+    background: rgba(0,0,0,0.9);
+    backdrop-filter: blur(8px);
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.12);
+    z-index: 1001;
+  }
+  .main-nav.open{ display: block; }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    margin: 0;
+  }
+  .main-nav ul li{ margin: 0; }
+  .main-nav ul li a{
+    display: block;
+    padding: 12px 10px;
+  }
+}
+
+/* ===== Contacto ===== */
+.contact { padding: 60px 20px; text-align: center; }
+.contact-sub { margin: 6px 0 22px; color: #444; }
+
+.contact-grid{
+  list-style: none;
+  padding: 0; margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  max-width: 1100px;
+}
+
+@media (max-width: 980px){
+  .contact-grid{ grid-template-columns: repeat(2, minmax(180px, 1fr)); }
+}
+@media (max-width: 520px){
+  .contact-grid{ grid-template-columns: 1fr; }
+}
+
+.contact-card{
+  display: grid;
+  place-items: center;
+  gap: .35rem;
+  padding: 18px 14px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  outline: none;
+}
+.contact-card:hover,
+.contact-card:focus-visible{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  border-color: var(--gold);
+}
+
+.contact-card .icon{
+  width: 36px; height: 36px;
+  fill: #222;         /* icono relleno */
+}
+.contact-card .label{
+  font-weight: 700;
+  color: #111;
+}
+.contact-card .value{
+  font-size: .95rem;
+  color: #333;
+}
+
+/* Alto contraste al pasar por el menú activo ya existente */
+.main-nav a.is-active { color: var(--gold); border-bottom: 2px solid var(--gold); }
+/* Iconos personalizados */
+.contact-card .icon{
+  width: 36px; height: 36px;
+  fill: #222;         /* negro por defecto */
+}
+
+/* WhatsApp verde */
+.contact-grid li:nth-child(2) .icon{
+  fill: #25D366;
+}
+
+/* ==== Servicios: imagen arriba, texto abajo (sin oscurecer) ==== */
+.services .card{
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+  width: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+  color: #222;
+  text-align: center;
+  padding: 0;                   /* quitamos padding del contenedor */
+  transform: none;              /* sin efecto lift */
+}
+
+/* anula el overlay oscuro y el hover antiguos */
+.services .card::before{ display:none !important; }
+.services .card:hover{ transform:none; }
+.services .card:hover .card-title{ top:auto; }
+
+/* bloque de imagen superior */
+.services .card-image {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+
+/* asigna imágenes correctas (nota: style.css está en /style → usamos ../) */
+.services .alquileres .card-image{ background-image: url("../img/servicios/alquileres.png"); }
+.services .hogar      .card-image{ background-image: url("../img/servicios/hogar.png"); }
+.services .turismo    .card-image{ background-image: url("../img/servicios/turismo.png"); }
+
+/* bloque de texto bajo la imagen */
+.services .card-title,
+.services .card-text {
+  background: #f7f7f7;   /* gris muy claro */
+  display: block;
+}
+
+.services .card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;              /* quitamos márgenes para que se vea como bloque */
+  padding: 12px 14px 6px;
+  color: #222;
+  border-bottom: 1px solid #e0e0e0; /* línea sutil separando título de texto */
+  border-left: 4px solid var(--gold); /* detalle dorado lateral opcional */
+}
+
+.services .card-text {
+  font-size: .95rem;
+  color: #444;
+  padding: 6px 14px 14px;
+  margin: 0;
+}
+/* Bloque de texto con fondo gris */
+.services .card-body {
+  background: #eaeaea;   /* gris claro, se nota más que el blanco */
+  padding: 12px 14px 14px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-top: 1px solid #d5d5d5;
+}
+
+/* Títulos y textos transparentes (sin fondo propio) */
+.services .card-title,
+.services .card-text {
+  background: transparent;  /* transparente para ver el gris del body */
+}
+
+.services .card-title {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.services .card-text {
+  margin: 0;
+  font-size: .95rem;
+  color: #444;
+}
+
+
+
+/* (opcional) quita cualquier borde lateral dorado previo */
+.services .card-title{ border-left: none; }
+
+.footer {
+  background: #222;
+  color: #eee;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-nav a,
+.footer-bottom a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.footer-nav a:hover,
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+.footer-logo img {
+  max-width: 120px;   /* controla el tamaño */
+  height: auto;
+  display: block;
+  margin-bottom: .5rem;
+}
