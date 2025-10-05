@@ -1,52 +1,90 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/velasplogo.png" imagesrcset="img/velasplogo.png 1200w" imagesizes="100vw" fetchpriority="high">
 
+  <!-- Preconnect para fuentes (reduce TTFB) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Parisienne&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style/style.css">
   <link rel="icon" type="image/png" href="img/limpio.PNG">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- ===== METADATOS SEO ===== -->
-   <title>SY Limpiezas al Detalle</title>
-<meta name="description" content="Servicios de limpieza profesional: alquileres, hogar y pisos turísticos. Cada rincón cuenta una historia, y nosotros lo dejamos impecable.">
-<meta name="author" content="SY Limpiezas">
+
+  <!-- Canonical -->
+<link rel="canonical" href="https://TU_DOMINIO/RUTA/">
+
+<!-- Meta básicos -->
+<title>SY Limpiezas al Detalle | Huesca</title>
+<meta name="description" content="Limpieza profesional en Huesca: alquileres, hogar y pisos turísticos. Confianza, detalle y resultados impecables.">
 <meta name="robots" content="index, follow">
 
-<!-- ===== OPEN GRAPH (para Facebook, WhatsApp, LinkedIn) ===== -->
-<meta property="og:title" content="SY Limpiezas | Limpieza profesional y detallada">
-<meta property="og:description" content="Servicios de limpieza profesional en alquileres, hogar y pisos turísticos. Confianza y cuidado en cada espacio.">
-<meta property="og:image" content="https://tudominio.com/img/meta/preview.jpg"> <!-- cambia por tu URL real -->
-<meta property="og:url" content="https://tudominio.com/">
+<!-- Open Graph -->
+<meta property="og:title" content="SY Limpiezas al Detalle">
+<meta property="og:description" content="Limpieza profesional en Huesca: alquileres, hogar y pisos turísticos.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://TU_DOMINIO/RUTA/">
+<meta property="og:image" content="https://TU_DOMINIO/RUTA/img/meta/og-1200x630.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
-<!-- ===== TWITTER CARD ===== -->
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SY Limpiezas | Limpieza profesional y detallada">
-<meta name="twitter:description" content="Servicios de limpieza profesional en alquileres, hogar y pisos turísticos.">
-<meta name="twitter:image" content="https://tudominio.com/img/meta/preview.jpg"> <!-- cambia por tu URL real -->
+<meta name="twitter:title" content="SY Limpiezas al Detalle">
+<meta name="twitter:description" content="Limpieza profesional en Huesca: alquileres, hogar y pisos turísticos.">
+<meta name="twitter:image" content="https://TU_DOMINIO/RUTA/img/meta/og-1200x630.jpg">
 
-
+<!--
+<script type="application/ld+json">
+{
+  "@context": "https://SYLimpiedas.es",
+  "@type": "Homelimpiezas",
+  "name": "SY Limpiezas al Detalle",
+  "image": "https://TU_DOMINIO/RUTA/img/meta/og-1200x630.jpg",
+  "url": "https://TU_DOMINIO/RUTA/",
+  "telephone": "+34 600111222",
+  "email": "contacto@sylimpiar.es",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Huesca",
+    "addressCountry": "ES"
+  },
+  "areaServed": ["Huesca", "Provincia de Huesca"],
+  "sameAs": [
+    "https://instagram.com/sy_limpiezas",
+    "https://wa.me/34600111222"
+  ],
+  "priceRange": "€€",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:00",
+    "closes": "20:00"
+  }]
+}
+</script>
+-->
 
 </head>
 
 <body>
 <header class="site-header">
   <div class="header-overlay">
-    <img src="img/logosf.png" alt="Logo SY" class="logo">
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <img src="img/logosf.png" alt="Logo SY" class="logo" width="300" height="120">
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
-<!-- NUEVO: frase bajo el header, fuera de la imagen -->
+<!-- Frase bajo el header, fuera de la imagen -->
 <div class="subheader-phrase">Cada rincón cuenta una historia</div>
 
 <!-- El menú, fuera del header (debajo de la frase) -->
-<nav class="main-nav">
+<nav class="main-nav" id="mainNav">
   <ul>
     <li><a href="#inicio">Inicio</a></li>
     <li><a href="#servicios">Servicios</a></li>
@@ -61,7 +99,9 @@
    
 
 <section id="inicio" class="hero">
-  <img src="img/velasplogo.png" alt="Velas con logo" class="hero-bg">
+  <img src="img/velasplogo.png" alt="Velas con logo" class="hero-bg"
+     width="1200" height="1200" loading="eager" decoding="async" fetchpriority="high">
+
   <h1>
     Más que limpiar, transformamos tu espacio<br>
     <span class="hero-sub">con confianza y cuidado</span>
@@ -70,31 +110,38 @@
 
 
  <section id="servicios" class="services">
-  <h3>Servicios</h3>
+  <h2>Servicios</h2>
 
   <div class="card alquileres">
-    <div class="card-image"></div>
-    <div class="card-body">
-      <div class="card-title">Alquileres</div>
-      <div class="card-text">Limpiezas personalizadas antes y después de cada estancia.</div>
-    </div>
+  <img src="img/servicios/alquileres.png"
+       alt="Limpieza para alquileres, antes y después de cada estancia"
+       width="640" height="360" loading="lazy" decoding="async">
+  <div class="card-body">
+    <div class="card-title">Alquileres</div>
+    <div class="card-text">Limpiezas personalizadas antes y después de cada estancia.</div>
   </div>
+</div>
+
 
   <div class="card hogar">
-    <div class="card-image"></div>
-    <div class="card-body">
-      <div class="card-title">Hogar</div>
-      <div class="card-text">Preparación impecable para compra-venta.</div>
+    <img src="img/servicios/hogar.png"
+       alt="Preparación impecable para compra-venta."
+       width="640" height="360" loading="lazy" decoding="async">
+  <div class="card-body">
+    <div class="card-title">Hogar</div>
+    <div class="card-text">Preparación impecable para compra-venta.</div>
     </div>
   </div>
 
   <div class="card turismo">
-    <div class="card-image"></div>
-    <div class="card-body">
-      <div class="card-title">Turismo</div>
-      <div class="card-text">Pisos turísticos listos para cada huésped.</div>
-    </div>
+    <img src="img/servicios/turismo.png"
+       alt="Pisos turísticos listos para cada huésped."
+       width="640" height="360" loading="lazy" decoding="async">
+  <div class="card-body">
+    <div class="card-title">Turismo</div>
+    <div class="card-text">Pisos turísticos listos para cada huésped.</div>
   </div>
+</div>
 </section>
 
 
@@ -103,7 +150,7 @@
 
 
    <section id="antes-despues" class="before-after">
-  <h3>Antes / Después</h3>
+  <h2>Antes / Después</h2>
 
   <div class="ba-carousel">
     <button class="ba-nav ba-prev" aria-label="Anterior">‹</button>
@@ -111,64 +158,65 @@
     <div class="ba-track" id="baTrack">
       <!-- ITEM 1 -->
       <article class="ba-item">
-        <div class="ba-wrap">
-          <img src="img/antes-despues/baño_antes.png" alt="Antes" class="ba-img ba-before">
-          <img src="img/antes-despues/baño_despues.png"  alt="Después" class="ba-img ba-after">
+        <div class="ba-wrap" role="region" aria-labelledby="cap-baño">
+          <img src="img/antes-despues/baño_antes.png"   alt="Baño antes de la limpieza"   class="ba-img ba-before" loading="lazy" decoding="async" width="1200" height="800">
+          <img src="img/antes-despues/baño_despues.png" alt="Baño después de la limpieza" class="ba-img ba-after"  loading="lazy" decoding="async" width="1200" height="800">
+
           <input type="range" class="ba-slider" min="0" max="100" value="50" aria-label="Comparador antes/después">
           <div class="ba-handle"><span class="ba-dot"></span></div>
         </div>
-        <p class="ba-caption">Baño a fondo</p>
+        <p class="ba-caption" id="cap-baño">Baño a fondo</p>
       </article>
 
       <!-- ITEM 2 -->
       <article class="ba-item">
-        <div class="ba-wrap">
-          <img src="img/antes-despues/cocina_antes.png" alt="Antes" class="ba-img ba-before">
-          <img src="img/antes-despues/cocina_despues.png"  alt="Después" class="ba-img ba-after">
+        <div class="ba-wrap" role="region" aria-labelledby="cap-cocina">
+          <img src="img/antes-despues/cocina_antes.png"    alt="cocina antes de la limpieza"   class="ba-img ba-before" loading="lazy" decoding="async" width="1200" height="800">
+          <img src="img/antes-despues/cocina_despues.png"  alt="cocina después de la limpieza" class="ba-img ba-after"  loading="lazy" decoding="async" width="1200" height="800">
           <input type="range" class="ba-slider" min="0" max="100" value="50" aria-label="Comparador antes/después">
           <div class="ba-handle"><span class="ba-dot"></span></div>
         </div>
-        <p class="ba-caption">Cocina a fondo</p>
+        <p class="ba-caption" id="cap-cocina">Cocina a fondo</p>
       </article>
       <!-- ITEM 3 -->
       <article class="ba-item">
-        <div class="ba-wrap">
-          <img src="img/antes-despues/horno_antes.png" alt="Antes" class="ba-img ba-before">
-          <img src="img/antes-despues/horno_despues.png"  alt="Después" class="ba-img ba-after">
+        <div class="ba-wrap" role="region" aria-labelledby="cap-horno">
+          <img src="img/antes-despues/horno_antes.png"    alt="horno antes de la limpieza"   class="ba-img ba-before" loading="lazy" decoding="async" width="1200" height="800">
+          <img src="img/antes-despues/horno_despues.png"  alt="horno después de la limpieza" class="ba-img ba-after"  loading="lazy" decoding="async" width="1200" height="800">
           <input type="range" class="ba-slider" min="0" max="100" value="50" aria-label="Comparador antes/después">
           <div class="ba-handle"><span class="ba-dot"></span></div>
         </div>
-        <p class="ba-caption">Limpieza de horno</p>
+        <p class="ba-caption" id="cap-horno">Limpieza de horno</p>
       </article>
       <!-- ITEM 4 -->
       <article class="ba-item">
-        <div class="ba-wrap">
-          <img src="img/antes-despues/salon_antes.png" alt="Antes" class="ba-img ba-before">
-          <img src="img/antes-despues/salon_despues.png"  alt="Después" class="ba-img ba-after">
+        <div class="ba-wrap" role="region" aria-labelledby="cap-salon">
+          <img src="img/antes-despues/salon_antes.png" alt="salon antes de la limpieza"      class="ba-img ba-before" loading="lazy" decoding="async" width="1200" height="800">
+          <img src="img/antes-despues/salon_despues.png"  alt="salon después de la limpieza" class="ba-img ba-after"  loading="lazy" decoding="async" width="1200" height="800">
           <input type="range" class="ba-slider" min="0" max="100" value="50" aria-label="Comparador antes/después">
           <div class="ba-handle"><span class="ba-dot"></span></div>
         </div>
-        <p class="ba-caption">Salón a fondo</p>
+        <p class="ba-caption" id="cap-salon">Salón a fondo</p>
       </article>
       <!-- ITEM 5 -->
       <article class="ba-item">
-        <div class="ba-wrap">
-          <img src="img/antes-despues/balcon_antes.png" alt="Antes" class="ba-img ba-before">
-          <img src="img/antes-despues/balcon_despues.png"  alt="Después" class="ba-img ba-after">
+        <div class="ba-wrap" role="region" aria-labelledby="cap-balcon">
+          <img src="img/antes-despues/balcon_antes.png" alt="balcon antes de la limpieza"      class="ba-img ba-before" loading="lazy" decoding="async" width="1200" height="800">
+          <img src="img/antes-despues/balcon_despues.png"  alt="balcon después de la limpieza" class="ba-img ba-after"  loading="lazy" decoding="async" width="1200" height="800">
           <input type="range" class="ba-slider" min="0" max="100" value="50" aria-label="Comparador antes/después">
           <div class="ba-handle"><span class="ba-dot"></span></div>
         </div>
-        <p class="ba-caption">Balcón a fondo</p>
+        <p class="ba-caption" id="cap-balcon">Balcón a fondo</p>
       </article>
       <!-- ITEM 6 -->
       <article class="ba-item">
-        <div class="ba-wrap">
-          <img src="img/antes-despues/galeria_antes.png" alt="Antes" class="ba-img ba-before">
-          <img src="img/antes-despues/galeria_despues.png"  alt="Después" class="ba-img ba-after">
+        <div class="ba-wrap" role="region" aria-labelledby="cap-galeria-cristales">
+          <img src="img/antes-despues/galeria_antes.png" alt="galeria antes de la limpieza"      class="ba-img ba-before" loading="lazy" decoding="async" width="1200" height="800">
+          <img src="img/antes-despues/galeria_despues.png"  alt="galeria después de la limpieza" class="ba-img ba-after"  loading="lazy" decoding="async" width="1200" height="800">
           <input type="range" class="ba-slider" min="0" max="100" value="50" aria-label="Comparador antes/después">
           <div class="ba-handle"><span class="ba-dot"></span></div>
         </div>
-        <p class="ba-caption">Galeria y cristales</p>
+        <p class="ba-caption" id="cap-galeria-cristales">Galeria y cristales</p>
       </article>
     </div>  
     <button class="ba-nav ba-next" aria-label="Siguiente">›</button>
@@ -176,7 +224,7 @@
 </section>
 
 <section id="consejos" class="tips">
-  <h3>Consejos de limpieza</h3>
+  <h2>Consejos de limpieza</h2>
 
   <div class="tips-carousel">
     <button class="tips-nav tips-prev" aria-label="Anterior">‹</button>
@@ -239,19 +287,25 @@
 
 
   <section id="opiniones" class="opinion">
-    <h3>Opiniones</h3>
+    <h2>Opiniones</h2>
     <blockquote>“Quedó impecable, nunca había visto mi casa así.”</blockquote>
     <blockquote>“Gran profesionalidad y confianza.”</blockquote>
   </section>
 
   <section id="confianza" class="trust">
-    <h3>Confianza</h3>
-    <p>Cada cliente importa. Mi compromiso es que tu espacio brille como nuevo.</p>
-    <p>[Firma YS]</p>
-  </section>
+  <h2>Confianza</h2>
+  <p>Cada cliente importa. Mi compromiso es que tu espacio brille como nuevo.</p>
+  
+  <img class="signature"
+     src="img/lacredoradosf.png"
+     alt="Firma manuscrita YS"
+     width="360" height="120" loading="lazy" decoding="async">
+
+</section>
+
 
 <section id="contacto" class="contact">
-  <h3>Contacto</h3>
+  <h2>Contacto</h2>
   <p class="contact-sub">Hablemos: rápida respuesta y total confianza.</p>
 
   <ul class="contact-grid" aria-label="Vías de contacto">
@@ -314,7 +368,14 @@
   </ul>
 </section>
 
-  
+  <section class="cta-final" id="presupuesto">
+  <h2>¿Empezamos?</h2>
+  <p>Cuéntame qué necesitas y te respondo rápido con una propuesta clara.</p>
+  <a class="btn-cta" href="https://wa.me/34600111222" target="_blank" rel="noopener">
+    Pide presupuesto por WhatsApp
+  </a>
+</section>
+
 <script>
 /* Inicializa TODOS los comparadores .ba-wrap (slider interior) */
 (function initComparators(){
@@ -383,6 +444,19 @@ if (imgRef) {
 </script>
 
 <script>
+// Foco visible para comparadores (teclado)
+(function(){
+  document.querySelectorAll('.ba-wrap').forEach(wrap=>{
+    const slider = wrap.querySelector('.ba-slider');
+    if(!slider) return;
+    slider.addEventListener('focus', ()=> wrap.classList.add('is-focus'));
+    slider.addEventListener('blur',  ()=> wrap.classList.remove('is-focus'));
+  });
+})();
+</script>
+
+
+<script>
 /* Carrusel de Consejos: 3 visibles en desktop, paso de 1 */
 (function initTips(){
   const track = document.getElementById('tipsTrack');
@@ -444,16 +518,28 @@ if (imgRef) {
 })();
 </script>
 
+
+
 <script>
-// Resalta link activo por sección
+// Resalta link activo por sección + aria-current
 (function(){
   const links = Array.from(document.querySelectorAll('.main-nav a'));
   const map = new Map(links.map(a => [a.getAttribute('href'), a]));
+
+  const setActive = (id) => {
+    links.forEach(a => {
+      const active = a.getAttribute('href') === id;
+      a.classList.toggle('is-active', active);
+      if (active) { a.setAttribute('aria-current', 'page'); }
+      else { a.removeAttribute('aria-current'); }
+    });
+  };
+
   const obs = new IntersectionObserver(entries=>{
     entries.forEach(e=>{
       if(e.isIntersecting){
         const id = '#' + e.target.id;
-        links.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === id));
+        setActive(id);
       }
     });
   }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 });
@@ -479,7 +565,7 @@ document.querySelectorAll('.card').forEach(card => {
  <footer class="footer">
   <div class="footer-top">
     <div class="footer-logo">
-      <img src="img/logo.PNG" alt="SY Limpiezas">
+      <img src="img/logo.PNG" alt="SY Limpiezas" width="240" height="240" loading="lazy" decoding="async">
       <p>Cada rincón cuenta una historia</p>
     </div>
 
@@ -520,23 +606,30 @@ document.querySelectorAll('.card').forEach(card => {
     Aceptar
   </button>
 </div>
+
+
 <script>
-  (function(){
-    var k = 'sy_cookie_ok';
-    if(!localStorage.getItem(k)){
-      var b = document.getElementById('cookie-banner');
-      var a = document.getElementById('cookie-accept');
-      b.style.display='flex';
-      b.style.justifyContent='space-between';
-      b.style.alignItems='center';
-      a.onclick=function(){
-        localStorage.setItem(k,'1');
-        b.remove();
-      };
-    }
-  })();
+(function(){
+  var k='sy_cookie_ok';
+  if(!localStorage.getItem(k)){
+    var b=document.getElementById('cookie-banner');
+    var a=document.getElementById('cookie-accept');
+    b.style.display='flex';
+    a.focus();
+    document.addEventListener('keydown', function(e){
+      if(e.key==='Escape'){ b.remove(); }
+    }, {once:true});
+    a.onclick=function(){ localStorage.setItem(k,'1'); b.remove(); };
+  }
+})();
 </script>
+
 
 
 </body>
 </html>
+
+
+</body>
+</html>
+
