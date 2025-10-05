@@ -820,7 +820,7 @@ footer a:hover{ text-decoration: underline; }
 /* Mover la frase a la derecha solo en móvil */
 @media (max-width: 680px){
   .hero{
-    --hero-x: 34%;   /* sube este % si aún se recorta (30–34%) */
+    --hero-x: 30%;   /* sube este % si aún se recorta (30–34%) */
     --hero-y: 8%;
   }
 }
@@ -828,6 +828,6 @@ footer a:hover{ text-decoration: underline; }
 /* Opcional: muy pantallas pequeñas */
 @media (max-width: 380px){
   .hero{
-    --hero-x: 38%;
+    --hero-x: 34%;
   }
 }
