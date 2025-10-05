@@ -518,18 +518,18 @@ footer a:hover{ text-decoration: underline; }
   display: grid;
   place-items: center;
   margin: 0; padding: 0;
-  text-align: center; color: #fff;
+  text-align: center; color: #000000;
   
 
   /* Variables para mover y escalar el texto libremente */
-  --hero-x: 27%;   /* acepta % o px: ej. 40% o 220px */
-  --hero-y: 8%;   /* acepta % o px */
+  --hero-x: 17%;   /* acepta % o px: ej. 40% o 220px */
+  --hero-y: 5%;   /* acepta % o px */
   --hero-fs-min: 1.8rem;
   --hero-fs-fluid: 3.8vw;
   --hero-fs-max: 2rem;
   --hero-weight: 400;      /* 400 = normal (menos negrita) */
   --hero-sub-weight: 400;  /* si quieres, también 400 */
-  --hero-text: #fff;
+  --hero-text: #000000;
 }
 
 .hero-bg{
@@ -540,18 +540,19 @@ footer a:hover{ text-decoration: underline; }
 
 .hero h1{
   position: absolute;
-  left: var(--hero-x);
-  top:  var(--hero-y);
-  transform: translate(-50%, -50%);
+  left: var(--hero-x);   /* 27% en tu CSS */
+  top:  var(--hero-y);   /* 8% en tu CSS */
+  transform: translateX(-50%);   /* 👈 antes era translate(-50%, -50%) */
   margin: 0;
   font-size: clamp(var(--hero-fs-min), var(--hero-fs-fluid), var(--hero-fs-max));
   line-height: 1.15;
   font-weight: var(--hero-weight);
   letter-spacing: .2px;
-  color: var(--hero-text);                  /* ← único color */
-  text-shadow: 0 2px 6px rgba(0,0,0,.35);   /* sombra para legibilidad */
+  color: var(--hero-text);
+  text-shadow: 0 2px 6px rgba(0,0,0,.35);
   z-index: 2;
 }
+
 
 
 /* sub más fino */
@@ -562,7 +563,6 @@ footer a:hover{ text-decoration: underline; }
   color: var(--hero-text);                  /* ← único color */
   text-shadow: 0 2px 6px rgba(0,0,0,.35);
 }
-
 
 
 /* Cuando el header se reduce, la frase sube acorde */
@@ -642,13 +642,15 @@ footer a:hover{ text-decoration: underline; }
   .main-nav{ z-index: 2000; }
 
   /*  Hero: texto algo más grande y centrado */
+ @media (max-width: 680px){
   .hero{
-    --hero-x: 50%;
-    --hero-y: 60%;
+    /* no redefinimos --hero-x / --hero-y para heredar 17% y 5% */
     --hero-fs-min: 1.6rem;
-    --hero-fs-fluid: 5.2vw;   /* ya lo tenías, lo reafirmamos */
-    --hero-fs-max: 1.9rem;    /* límite superior en pantallas pequeñas */
+    --hero-fs-fluid: 5.2vw;
+    --hero-fs-max: 1.9rem;
   }
+}
+
 
   /*Servicios: tarjetas al 100% con buen aire */
   .services .card{
@@ -757,8 +759,6 @@ footer a:hover{ text-decoration: underline; }
   transition: opacity .15s ease;
 }
 .trust .signature:hover{ opacity: 1; }
-
-
 /* ===== CTA Final ===== */
 .cta-final{
   padding: 64px 20px;
@@ -799,7 +799,7 @@ footer a:hover{ text-decoration: underline; }
   outline:2px solid #8c6a3d;
   outline-offset:3px;
 }
-
+/* FIX: menú móvil debe seguir al header reducido */
 @media (max-width: 900px){
   .main-nav{
     position: fixed;    /* flota respecto a la ventana */
@@ -809,5 +809,24 @@ footer a:hover{ text-decoration: underline; }
   }
   .site-header.scrolled + .subheader-phrase + .main-nav{
     top: calc(var(--header-h-scrolled) + var(--phrase-h));
+  }
+}
+/* Hero: tipografía Parisienne */
+.hero > h1{
+  font-family: "Parisienne", cursive, sans-serif;
+  font-weight: 400;              /* Parisienne solo tiene 400 */
+  font-synthesis-weight: none;   /* evita “falso bold” */
+}
+/* Mover la frase a la derecha solo en móvil */
+@media (max-width: 680px){
+  .hero{
+    --hero-x: 28%;   /* sube este % si aún se recorta (30–34%) */
+  }
+}
+
+/* Opcional: muy pantallas pequeñas */
+@media (max-width: 380px){
+  .hero{
+    --hero-x: 34%;
   }
 }
