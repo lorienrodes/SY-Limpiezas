@@ -821,7 +821,7 @@ footer a:hover{ text-decoration: underline; }
 @media (max-width: 680px){
   .hero{
     --hero-x: 30%;   /* sube este % si aún se recorta (30–34%) */
-    --hero-y: 8%;
+    --hero-y: 6%;
   }
 }
 
