@@ -564,15 +564,6 @@ footer a:hover{ text-decoration: underline; }
 }
 
 
-@media (max-width: 680px){
-  .hero{
-    --hero-x: 50%;
-    --hero-y: 60%;
-    --hero-fs-fluid: 5.2vw;
-  }
-}
-
-
 
 /* Cuando el header se reduce, la frase sube acorde */
 .site-header.scrolled + .subheader-phrase{
