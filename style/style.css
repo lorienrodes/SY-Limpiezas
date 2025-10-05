@@ -809,3 +809,14 @@ footer a:hover{ text-decoration: underline; }
   outline-offset:3px;
 }
 
+@media (max-width: 900px){
+  .main-nav{
+    position: fixed;    /* flota respecto a la ventana */
+    top: calc(var(--header-h) + var(--phrase-h));
+    left: 0; right: 0;
+    z-index: 2000;
+  }
+  .site-header.scrolled + .subheader-phrase + .main-nav{
+    top: calc(var(--header-h-scrolled) + var(--phrase-h));
+  }
+}
