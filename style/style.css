@@ -766,3 +766,46 @@ footer a:hover{ text-decoration: underline; }
   transition: opacity .15s ease;
 }
 .trust .signature:hover{ opacity: 1; }
+
+
+/* ===== CTA Final ===== */
+.cta-final{
+  padding: 64px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(140,106,61,.07), rgba(0,0,0,.02));
+  border-top: 1px solid rgba(0,0,0,.06);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+.cta-final h2{
+  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+  margin: 0 0 .4rem;
+}
+.cta-final p{
+  margin: 0 0 1.2rem;
+  color: #333;
+}
+
+/* Botón CTA */
+.btn-cta{
+  display:inline-block;
+  padding:.9rem 1.2rem;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:700;
+  border:1px solid rgba(140,106,61,.35);
+  background: linear-gradient(180deg, #f7e4bf, #e9c77f);
+  color:#1a1a1a;
+  box-shadow: 0 4px 14px rgba(0,0,0,.12), inset 0 1px 0 rgba(255,255,255,.6);
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+.btn-cta:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.16), inset 0 1px 0 rgba(255,255,255,.7);
+  filter: brightness(1.03);
+}
+.btn-cta:active{ transform: translateY(0); }
+.btn-cta:focus-visible{
+  outline:2px solid #8c6a3d;
+  outline-offset:3px;
+}
+
